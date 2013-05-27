@@ -1,6 +1,10 @@
 //#include "BaseBogglePlayer.h"
+#pragma once
+#ifndef _PLAYER_H
+#define _PLAYER_H
 #include <vector>
 #include <string>
+using namespace std;
 class BogglePlayer{
 
 public:
@@ -13,4 +17,5 @@ void setBoard(unsigned int rows, unsigned int cols, string** diceArray);
 vector<int> isOnBoard(const string& word_to_check);
 //void getCustomBoard(string** &new_board, unsigned int *rows, unsigned int *cols);
 ~BogglePlayer() {}
-}
+};
+#endif
