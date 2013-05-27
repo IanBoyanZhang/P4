@@ -1,6 +1,8 @@
-#include "BaseBogglePlayer.h"
-#include "BogglePlayer.h"
-
+//#include "BaseBogglePlayer.h"
+#include "player.h"
+#include <vector>
+#include <string>
+using namespace std;
 std::vector<int> location;
 
 //void BogglePlayer::buildLexicon(const set<string>& word_list);
@@ -11,7 +13,7 @@ void BogglePlayer::setBoard(unsigned int rows, unsigned int cols, string** diceA
 	for(unsigned int r=0; r<rows; r++){
 		for(unsigned int c=0; c<cols; c++){
 			this->boboard[r][c] = diceArray[r][c];
-
+			cout << this->boboard[r][c] << endl;	
 		}
 	}
 }
@@ -59,7 +61,7 @@ bool findword(int irow, int icol, const string& word_to_check, int i){
 		cend=icol;
 	else 
  		cend=icol+1;
-for(int r=rstart; r<=rend; r++){
+	for(int r=rstart; r<=rend; r++){
 	for(int c=cstart; c<=cend; c++){
 		if (boboard[r][c]==word_to_check[i]){
 			location[i]=r*cols+c;
@@ -68,11 +70,9 @@ for(int r=rstart; r<=rend; r++){
 			else
 				return true;
 		}
+		return false;
 	}
-}
-
-
-
+	}
 
 }
 //void  BogglePlayer::getCustomBoard(string** &new_board, unsigned int *rows, unsigned int *cols);
